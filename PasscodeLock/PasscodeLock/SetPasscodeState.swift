@@ -12,7 +12,7 @@ struct SetPasscodeState: PasscodeLockStateType {
     
     let title: String
     let description: String
-    let isCancellableAction = true
+    let isCancellableAction = false
     var isTouchIDAllowed = false
     
     init(title: String, description: String) {
