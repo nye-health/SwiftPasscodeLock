@@ -7,6 +7,37 @@
 //
 
 import UIKit
+import LocalAuthentication
+
+extension LAContext {
+    enum BiometricType: String {
+        case none
+        case touchID
+        case faceID
+    }
+
+    var biometricType: BiometricType {
+        var error: NSError?
+
+        guard self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: &error) else {
+            // Capture these recoverable error thru Crashlytics
+            return .none
+        }
+
+        if #available(iOS 11.0, *) {
+            switch self.biometryType {
+            case .none:
+                return .none
+            case .touchID:
+                return .touchID
+            case .faceID:
+                return .faceID
+            }
+        } else {
+            return  self.canEvaluatePolicy(.deviceOwnerAuthenticationWithBiometrics, error: nil) ? .touchID : .none
+        }
+    }
+}
 
 public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDelegate {
     
@@ -99,11 +130,20 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     }
     
     internal func updatePasscodeView() {
-        
+
         titleLabel?.text = passcodeLock.state.title
         descriptionLabel?.text = passcodeLock.state.description
         cancelButton?.isHidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
+
+        let currentType = LAContext().biometricType
+        if currentType == .faceID {
+            touchIDButton?.setTitle("Use Face ID", for: .normal)
+        } else if currentType == .touchID {
+            touchIDButton?.setTitle("Use Touch ID", for: .normal)
+        } else {
+            touchIDButton?.setTitle("", for: .normal)
+        }
     }
     
     // MARK: - Events
