@@ -138,7 +138,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
 
         let currentType = LAContext().biometricType
         if currentType == .faceID {
-            touchIDButton?.setTitle("Use Face ID", for: .normal)
+            touchIDButton?.setTitle("", for: .normal)
         } else if currentType == .touchID {
             touchIDButton?.setTitle("Use Touch ID", for: .normal)
         } else {
