@@ -162,7 +162,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     
     @objc public func appWillEnterForegroundHandler(notification: NSNotification) {
         
-        authenticateWithBiometrics()
+//        authenticateWithBiometrics()
     }
     
     @objc public func appDidEnterBackgroundHandler(notification: NSNotification) {
