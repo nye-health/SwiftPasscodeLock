@@ -28,9 +28,48 @@ struct SetPasscodeState: PasscodeLockStateType {
     }
     
     func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
+
+        if isPinComplex(passcode: passcode) == false
+        {
+            let insecureTitle = "Try again"
+            let insecureDescription = "Your PIN is insecure"
+
+            let nextState = SetPasscodeState(title: insecureTitle, description: insecureDescription)
+
+            lock.changeStateTo(state: nextState)
+            lock.delegate?.passcodeLockDidFail(lock: lock)
+
+        } else {
         
-        let nextState = ConfirmPasscodeState(passcode: passcode)
-        
-        lock.changeStateTo(state: nextState)
+            let nextState = ConfirmPasscodeState(passcode: passcode)
+
+            lock.changeStateTo(state: nextState)
+        }
+    }
+
+    func isPinComplex(passcode: [String]) -> Bool {
+
+        var numericalPasscode: [Int] = []
+
+        for code in passcode {
+            numericalPasscode.append(Int(code) ?? 0)
+        }
+
+        // Are all items in the array the same?
+        if numericalPasscode.dropFirst().allSatisfy({ $0 == numericalPasscode.first }) {
+            return false
+        }
+
+        // Are all items sequential ascending?
+        if numericalPasscode.map { $0 - 1 }.dropFirst() == numericalPasscode.dropLast() {
+            return false
+        }
+
+        // Are all items sequential decending?
+        if numericalPasscode.map { $0 + 1 }.dropFirst() == numericalPasscode.dropLast() {
+            return false
+        }
+
+        return true
     }
 }
