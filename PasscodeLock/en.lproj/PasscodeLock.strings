@@ -26,6 +26,10 @@
 "PasscodeLockMismatchTitle" = "Try again";
 "PasscodeLockMismatchDescription" = "Passcodes didn\'t match.";
 
+/* Passcode Insecure State */
+"PasscodeLockInsecureTitle" = "Try again";
+"PasscodeLockInsecureDescription" = "Your PIN is insecure.";
+
 /* Touch ID Reason */
 "PasscodeLockTouchIDReason" = "Authentication required to proceed";
 

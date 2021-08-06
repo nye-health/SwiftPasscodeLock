@@ -31,8 +31,8 @@ struct SetPasscodeState: PasscodeLockStateType {
 
         if isPinComplex(passcode: passcode) == false
         {
-            let insecureTitle = "Try again"
-            let insecureDescription = "Your PIN is insecure"
+            let insecureTitle = localizedStringFor(key: "PasscodeLockInsecureTitle", comment: "Set passcode title")
+            let insecureDescription = localizedStringFor(key: "PasscodeLockInsecureDescription", comment: "Set passcode description")
 
             let nextState = SetPasscodeState(title: insecureTitle, description: insecureDescription)
 
