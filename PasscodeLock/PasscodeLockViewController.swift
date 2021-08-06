@@ -60,6 +60,7 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
     
     @IBOutlet public weak var titleLabel: UILabel?
     @IBOutlet public weak var descriptionLabel: UILabel?
+    @IBOutlet public weak var errorLabel: UILabel?
     @IBOutlet public var placeholders: [PasscodeSignPlaceholderView] = [PasscodeSignPlaceholderView]()
     @IBOutlet public weak var cancelButton: UIButton?
     @IBOutlet public weak var deleteSignButton: UIButton?
@@ -133,6 +134,8 @@ public class PasscodeLockViewController: UIViewController, PasscodeLockTypeDeleg
 
         titleLabel?.text = passcodeLock.state.title
         descriptionLabel?.text = passcodeLock.state.description
+        errorLabel?.text = passcodeLock.state.error
+        errorLabel?.isHidden = passcodeLock.state.error == nil
         cancelButton?.isHidden = !passcodeLock.state.isCancellableAction
         touchIDButton?.isHidden = !passcodeLock.isTouchIDAllowed
 

@@ -12,6 +12,7 @@
                 <outlet property="cancelButton" destination="etg-x7-Mx1" id="ckg-NT-1rx"/>
                 <outlet property="deleteSignButton" destination="H78-kl-y6L" id="kHt-em-QUT"/>
                 <outlet property="descriptionLabel" destination="HbT-GO-CPk" id="gtS-ky-zzI"/>
+                <outlet property="errorLabel" destination="f3V-ZL-HQk" id="aw8-vQ-exp"/>
                 <outlet property="placeholdersX" destination="Wqo-IM-yCU" id="8td-lh-XMA"/>
                 <outlet property="titleLabel" destination="1wK-Ol-7mm" id="FOM-sv-dOO"/>
                 <outlet property="touchIDButton" destination="0Ph-dj-v7R" id="ifL-gW-Ttr"/>
@@ -30,19 +31,19 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-Ol-7mm">
-                    <rect key="frame" x="185" y="163.5" width="44" height="29"/>
+                    <rect key="frame" x="185" y="183.5" width="44" height="29"/>
                     <fontDescription key="fontDescription" type="system" pointSize="24"/>
                     <color key="textColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbT-GO-CPk">
-                    <rect key="frame" x="165.5" y="202.5" width="83" height="19.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbT-GO-CPk">
+                    <rect key="frame" x="165.5" y="222.5" width="83.5" height="19.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
-                    <rect key="frame" x="133.5" y="252" width="147" height="16"/>
+                    <rect key="frame" x="133.5" y="272" width="147" height="16"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
@@ -439,7 +440,7 @@
                         <action selector="touchIDButtonTap:" destination="-1" eventType="touchUpInside" id="MT9-Ev-GsW"/>
                     </connections>
                 </button>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3V-ZL-HQk">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3V-ZL-HQk">
                     <rect key="frame" x="16" y="312" width="382" height="20"/>
                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                     <color key="textColor" red="0.97647058823529409" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -479,6 +480,7 @@
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="bR1-VP-TdA"/>
                 <constraint firstItem="EUD-XB-0CR" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="bc8-gr-atX"/>
                 <constraint firstItem="CGh-ph-49t" firstAttribute="bottom" secondItem="C9Z-3u-ohd" secondAttribute="top" constant="-20" id="diZ-Kj-1hU"/>
+                <constraint firstItem="CGh-ph-49t" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="bottom" constant="60" id="e2e-0y-DBK"/>
                 <constraint firstItem="f3V-ZL-HQk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="esm-ky-oED"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i6j-iI-02e"/>
                 <constraint firstItem="RA8-jd-dag" firstAttribute="centerX" secondItem="RR4-5o-pli" secondAttribute="centerX" id="inw-ZS-osP"/>
@@ -490,6 +492,11 @@
                 <constraint firstItem="etg-x7-Mx1" firstAttribute="centerX" secondItem="RA8-jd-dag" secondAttribute="centerX" id="v5R-tE-Ub7"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="top" secondItem="cuq-ue-Jyj" secondAttribute="bottom" constant="20" id="ymC-lk-DI6"/>
             </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="9qW-Rm-w6t"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="369.56521739130437" y="434.51086956521743"/>
         </view>
     </objects>

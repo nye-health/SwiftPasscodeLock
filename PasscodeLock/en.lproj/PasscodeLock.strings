@@ -7,28 +7,26 @@
 */
 
 /* Enter Passcode State */
-"PasscodeLockEnterTitle" = "Enter Passcode";
-"PasscodeLockEnterDescription" = "Enter your passcode to proceed.";
+"PasscodeLockEnterTitle" = "Enter your passcode";
+"PasscodeLockEnterDescription" = "Your passcode is required to view your health data";
 
 /* Set Passcode State */
-"PasscodeLockSetTitle" = "Enter a Passcode";
-"PasscodeLockSetDescription" = "Choose your passcode.";
+"PasscodeLockSetTitle" = "Enter a passcode";
+"PasscodeLockSetDescription" = "Choose your passcode";
 
 /* Confirm Passcode State */
-"PasscodeLockConfirmTitle" = "Confirm Passcode";
-"PasscodeLockConfirmDescription" = "Enter the passcode again.";
+"PasscodeLockConfirmTitle" = "Confirm passcode";
+"PasscodeLockConfirmDescription" = "Enter the passcode again";
 
 /* Change Passcode State */
-"PasscodeLockChangeTitle" = "Enter Old Passcode";
-"PasscodeLockChangeDescription" = "Enter your old passcode.";
+"PasscodeLockChangeTitle" = "Enter old passcode";
+"PasscodeLockChangeDescription" = "Enter your old passcode";
 
 /* Passcode Mismatch State */
-"PasscodeLockMismatchTitle" = "Try again";
-"PasscodeLockMismatchDescription" = "Passcodes didn\'t match.";
+"PasscodeLockMismatchError" = "Wrong passcode. Please try again.";
 
 /* Passcode Insecure State */
-"PasscodeLockInsecureTitle" = "Try again";
-"PasscodeLockInsecureDescription" = "Your PIN is insecure.";
+"PasscodeLockInsecureError" = "Your passcode is insecure. Please try again.";
 
 /* Touch ID Reason */
 "PasscodeLockTouchIDReason" = "Authentication required to proceed";
