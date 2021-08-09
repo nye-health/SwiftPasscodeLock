@@ -12,6 +12,7 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
     
     let title: String
     let description: String
+    let error: String?
     let isCancellableAction = false
     var isTouchIDAllowed = false
     
@@ -22,6 +23,7 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
         passcodeToConfirm = passcode
         title = localizedStringFor(key: "PasscodeLockConfirmTitle", comment: "Confirm passcode title")
         description = localizedStringFor(key: "PasscodeLockConfirmDescription", comment: "Confirm passcode description")
+        error = nil
     }
     
     func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
@@ -32,11 +34,9 @@ struct ConfirmPasscodeState: PasscodeLockStateType {
             lock.delegate?.passcodeLockDidSucceed(lock: lock)
         
         } else {
+            let mismatchError = localizedStringFor(key: "PasscodeLockMismatchError", comment: "Passcode mismatch error")
             
-            let mismatchTitle = localizedStringFor(key: "PasscodeLockMismatchTitle", comment: "Passcode mismatch title")
-            let mismatchDescription = localizedStringFor(key: "PasscodeLockMismatchDescription", comment: "Passcode mismatch description")
-            
-            let nextState = SetPasscodeState(title: mismatchTitle, description: mismatchDescription)
+            let nextState = SetPasscodeState(title: title, description: description, error: mismatchError)
             
             lock.changeStateTo(state: nextState)
             lock.delegate?.passcodeLockDidFail(lock: lock)

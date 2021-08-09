@@ -14,17 +14,22 @@ struct EnterPasscodeState: PasscodeLockStateType {
     
     let title: String
     let description: String
+    let error: String?
     let isCancellableAction: Bool
     var isTouchIDAllowed = true
     
-    private var inccorectPasscodeAttempts = 0
-    private var isNotificationSent = false
+    private var inccorectPasscodeAttempts: Int
+    private var isNotificationSent: Bool
     
-    init(allowCancellation: Bool = false) {
+    init(error: String? = nil, allowCancellation: Bool = false, inccorectPasscodeAttempts: Int = 0, isNotificationSent: Bool = false) {
         
         isCancellableAction = allowCancellation
         title = localizedStringFor(key: "PasscodeLockEnterTitle", comment: "Enter passcode title")
         description = localizedStringFor(key: "PasscodeLockEnterDescription", comment: "Enter passcode description")
+        self.error = error
+        
+        self.inccorectPasscodeAttempts = inccorectPasscodeAttempts
+        self.isNotificationSent = isNotificationSent
     }
     
     mutating func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
@@ -46,6 +51,10 @@ struct EnterPasscodeState: PasscodeLockStateType {
                 postNotification()
             }
             
+            let mismatchError = localizedStringFor(key: "PasscodeLockMismatchError", comment: "Set passcode error")
+            let nextState = EnterPasscodeState(error: mismatchError, allowCancellation: isCancellableAction, inccorectPasscodeAttempts: self.inccorectPasscodeAttempts, isNotificationSent: self.isNotificationSent)
+
+            lock.changeStateTo(state: nextState)
             lock.delegate?.passcodeLockDidFail(lock: lock)
         }
     }

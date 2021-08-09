@@ -12,29 +12,31 @@ struct SetPasscodeState: PasscodeLockStateType {
     
     let title: String
     let description: String
+    let error: String?
     let isCancellableAction = false
     var isTouchIDAllowed = false
     
-    init(title: String, description: String) {
+    init(title: String, description: String, error: String?) {
         
         self.title = title
         self.description = description
+        self.error = error
     }
     
     init() {
         
         title = localizedStringFor(key: "PasscodeLockSetTitle", comment: "Set passcode title")
         description = localizedStringFor(key: "PasscodeLockSetDescription", comment: "Set passcode description")
+        error = nil
     }
     
     func acceptPasscode(passcode: [String], fromLock lock: PasscodeLockType) {
 
         if isPinComplex(passcode: passcode) == false
         {
-            let insecureTitle = "Try again"
-            let insecureDescription = "Your PIN is insecure"
+            let insecureError = localizedStringFor(key: "PasscodeLockInsecureError", comment: "Set passcode error")
 
-            let nextState = SetPasscodeState(title: insecureTitle, description: insecureDescription)
+            let nextState = SetPasscodeState(title: title, description: description, error: insecureError)
 
             lock.changeStateTo(state: nextState)
             lock.delegate?.passcodeLockDidFail(lock: lock)

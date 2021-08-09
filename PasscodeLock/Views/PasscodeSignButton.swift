@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable
 public class PasscodeSignButton: UIButton {
     
+    private static let radius: Int = 40
+    
     @IBInspectable
     public var passcodeSign: String = "1"
     
@@ -22,7 +24,7 @@ public class PasscodeSignButton: UIButton {
     }
     
     @IBInspectable
-    public var borderRadius: CGFloat = 30 {
+    public var borderRadius: CGFloat = CGFloat(radius) {
         didSet {
             setupView()
         }
@@ -51,7 +53,7 @@ public class PasscodeSignButton: UIButton {
     }
     
     public override var intrinsicContentSize: CGSize {
-        return CGSize(width: 60, height: 60)
+        return CGSize(width: PasscodeSignButton.radius * 2, height: PasscodeSignButton.radius * 2)
 
     }
     

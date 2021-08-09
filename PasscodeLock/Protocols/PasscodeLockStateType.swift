@@ -12,6 +12,7 @@ public protocol PasscodeLockStateType {
     
     var title: String {get}
     var description: String {get}
+    var error: String? {get}
     var isCancellableAction: Bool {get}
     var isTouchIDAllowed: Bool {get}
     

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -12,6 +12,7 @@
                 <outlet property="cancelButton" destination="etg-x7-Mx1" id="ckg-NT-1rx"/>
                 <outlet property="deleteSignButton" destination="H78-kl-y6L" id="kHt-em-QUT"/>
                 <outlet property="descriptionLabel" destination="HbT-GO-CPk" id="gtS-ky-zzI"/>
+                <outlet property="errorLabel" destination="f3V-ZL-HQk" id="aw8-vQ-exp"/>
                 <outlet property="placeholdersX" destination="Wqo-IM-yCU" id="8td-lh-XMA"/>
                 <outlet property="titleLabel" destination="1wK-Ol-7mm" id="FOM-sv-dOO"/>
                 <outlet property="touchIDButton" destination="0Ph-dj-v7R" id="ifL-gW-Ttr"/>
@@ -29,20 +30,20 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-Ol-7mm">
-                    <rect key="frame" x="282" y="119" width="37" height="23"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wK-Ol-7mm">
+                    <rect key="frame" x="185" y="183.5" width="44" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <color key="textColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Description" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbT-GO-CPk">
-                    <rect key="frame" x="261" y="146" width="79" height="18"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                    <color key="textColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbT-GO-CPk">
+                    <rect key="frame" x="165.5" y="222.5" width="83.5" height="19.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
-                    <rect key="frame" x="253" y="180" width="147" height="16"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcN-lo-9Jb" userLabel="Placeholders">
+                    <rect key="frame" x="133.5" y="272" width="147" height="16"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w14-Kb-Jnf" userLabel="Placeholder 1" customClass="PasscodeSignPlaceholderView" customModule="PasscodeLock" customModuleProvider="target">
                             <rect key="frame" x="0.0" y="0.0" width="16" height="16"/>
@@ -52,10 +53,10 @@
                                     <color key="value" red="0.95294117647058818" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
-                                    <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
-                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
@@ -67,10 +68,10 @@
                                     <color key="value" red="0.95294117649999999" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
-                                    <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
-                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
@@ -82,10 +83,10 @@
                                     <color key="value" red="0.95294117649999999" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
-                                    <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
-                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
@@ -97,10 +98,10 @@
                                     <color key="value" red="0.95294117649999999" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
-                                    <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
-                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
@@ -112,10 +113,10 @@
                                     <color key="value" red="0.95294117649999999" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
-                                    <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
-                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
@@ -127,10 +128,10 @@
                                     <color key="value" red="0.95294117649999999" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="activeColor">
-                                    <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </userDefinedRuntimeAttribute>
                                 <userDefinedRuntimeAttribute type="color" keyPath="inactiveColor">
-                                    <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="0.33000000000000002" colorSpace="custom" customColorSpace="sRGB"/>
                                 </userDefinedRuntimeAttribute>
                             </userDefinedRuntimeAttributes>
                         </view>
@@ -154,11 +155,11 @@
                         <constraint firstItem="YJW-U8-Yo7" firstAttribute="top" secondItem="jlt-C0-1Ot" secondAttribute="top" id="tNV-xE-Ejb"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-ue-Jyj" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="200" y="220" width="60" height="60"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cuq-ue-Jyj" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="67" y="348" width="80" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="1">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -168,10 +169,10 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="passcodeSign" value="1"/>
                     </userDefinedRuntimeAttributes>
@@ -179,11 +180,11 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="KdD-eG-uGQ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-ph-49t" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="270" y="220" width="60" height="60"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CGh-ph-49t" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="167" y="348" width="80" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="2">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -193,10 +194,10 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="passcodeSign" value="2"/>
                     </userDefinedRuntimeAttributes>
@@ -204,11 +205,11 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="BNz-Qp-TcT"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLy-90-g1a" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="340" y="220" width="60" height="60"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pLy-90-g1a" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="267" y="348" width="80" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="3">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -218,10 +219,10 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="passcodeSign" value="3"/>
                     </userDefinedRuntimeAttributes>
@@ -229,11 +230,11 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="kQR-ai-KbC"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-5o-pli" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="200" y="290" width="60" height="60"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RR4-5o-pli" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="67" y="448" width="80" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="4">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -243,10 +244,10 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="passcodeSign" value="4"/>
                     </userDefinedRuntimeAttributes>
@@ -254,11 +255,11 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="zM7-Dp-6zV"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9Z-3u-ohd" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="270" y="290" width="60" height="60"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C9Z-3u-ohd" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="167" y="448" width="80" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="5">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -268,10 +269,10 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="passcodeSign" value="5"/>
                     </userDefinedRuntimeAttributes>
@@ -279,11 +280,11 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="MdT-sz-gVU"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDx-aD-wJK" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="340" y="290" width="60" height="60"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WDx-aD-wJK" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="267" y="448" width="80" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="6">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -293,10 +294,10 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="passcodeSign" value="6"/>
                     </userDefinedRuntimeAttributes>
@@ -304,11 +305,11 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="Gh8-TY-9A6"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA8-jd-dag" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="200" y="360" width="60" height="60"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RA8-jd-dag" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="67" y="548" width="80" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="7">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -318,10 +319,10 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="passcodeSign" value="7"/>
                     </userDefinedRuntimeAttributes>
@@ -329,11 +330,11 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="CXU-r8-oI2"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbJ-Y8-MMf" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="270" y="360" width="60" height="60"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbJ-Y8-MMf" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="167" y="548" width="80" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="8">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -343,10 +344,10 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="passcodeSign" value="8"/>
                     </userDefinedRuntimeAttributes>
@@ -354,11 +355,11 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="JDk-Cb-MWh"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUD-XB-0CR" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="340" y="360" width="60" height="60"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EUD-XB-0CR" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="267" y="548" width="80" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="9">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -368,10 +369,10 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="passcodeSign" value="9"/>
                     </userDefinedRuntimeAttributes>
@@ -379,11 +380,11 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="aJD-gJ-Fvd"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CR-0R-0Nr" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
-                    <rect key="frame" x="270" y="430" width="60" height="60"/>
-                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="21"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0CR-0R-0Nr" customClass="PasscodeSignButton" customModule="PasscodeLock" customModuleProvider="target">
+                    <rect key="frame" x="167" y="648" width="80" height="80"/>
+                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                     <state key="normal" title="0">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="selected">
                         <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -393,10 +394,10 @@
                     </state>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.0039215686274509803" green="0.69019607843137254" blue="0.94117647058823528" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="color" keyPath="highlightBackgroundColor">
-                            <color key="value" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            <color key="value" red="0.30980392156862746" green="0.69019607843137254" blue="0.92941176470588238" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="string" keyPath="passcodeSign" value="0"/>
                     </userDefinedRuntimeAttributes>
@@ -404,21 +405,23 @@
                         <action selector="passcodeSignButtonTap:" destination="-1" eventType="touchUpInside" id="lGc-z4-PyQ"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etg-x7-Mx1">
-                    <rect key="frame" x="202" y="447" width="56" height="26"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="etg-x7-Mx1">
+                    <rect key="frame" x="76.5" y="673.5" width="61" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                     <state key="normal" title="Cancel">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <connections>
                         <action selector="cancelButtonTap:" destination="-1" eventType="touchUpInside" id="zLU-i4-B3I"/>
                     </connections>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H78-kl-y6L">
-                    <rect key="frame" x="344" y="447" width="53" height="26"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H78-kl-y6L">
+                    <rect key="frame" x="278" y="673.5" width="58" height="29"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                     <state key="normal" title="Delete">
-                        <color key="titleColor" red="0.31094613669999999" green="0.68968302010000004" blue="0.92944174999999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="titleColor" red="0.32941176470588235" green="0.44705882352941173" blue="0.5490196078431373" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
                     <state key="disabled">
                         <color key="titleColor" red="0.78967124223709106" green="0.83030849695205688" blue="0.94253647327423096" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -428,7 +431,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button">
-                    <rect key="frame" x="159.5" y="830" width="95" height="26"/>
+                    <rect key="frame" x="159.5" y="850" width="95" height="26"/>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                     <state key="normal" title="Use TouchID">
                         <color key="titleColor" red="0.4549019608" green="0.59999999999999998" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -437,65 +440,81 @@
                         <action selector="touchIDButtonTap:" destination="-1" eventType="touchUpInside" id="MT9-Ev-GsW"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f3V-ZL-HQk">
+                    <rect key="frame" x="16" y="312" width="382" height="20"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                    <color key="textColor" red="0.97647058823529409" green="0.41568627450980389" blue="0.41568627450980389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="0CR-0R-0Nr" firstAttribute="centerX" secondItem="PbJ-Y8-MMf" secondAttribute="centerX" id="16E-tM-5HY"/>
+                <constraint firstItem="CGh-ph-49t" firstAttribute="top" secondItem="f3V-ZL-HQk" secondAttribute="bottom" constant="16" id="1XO-RX-maS"/>
                 <constraint firstItem="cuq-ue-Jyj" firstAttribute="top" secondItem="CGh-ph-49t" secondAttribute="top" id="1pk-a8-KUM"/>
                 <constraint firstItem="CGh-ph-49t" firstAttribute="centerX" secondItem="C9Z-3u-ohd" secondAttribute="centerX" id="3Jc-aw-8VW"/>
                 <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="4dI-MF-FB1"/>
-                <constraint firstItem="pLy-90-g1a" firstAttribute="leading" secondItem="CGh-ph-49t" secondAttribute="trailing" constant="10" id="6jk-5n-EC0"/>
-                <constraint firstItem="cuq-ue-Jyj" firstAttribute="trailing" secondItem="CGh-ph-49t" secondAttribute="leading" constant="-10" id="6wf-5d-CCI"/>
-                <constraint firstItem="0Ph-dj-v7R" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-40" id="BIJ-v9-DKU"/>
+                <constraint firstItem="pLy-90-g1a" firstAttribute="leading" secondItem="CGh-ph-49t" secondAttribute="trailing" constant="20" id="6jk-5n-EC0"/>
+                <constraint firstItem="cuq-ue-Jyj" firstAttribute="trailing" secondItem="CGh-ph-49t" secondAttribute="leading" constant="-20" id="6wf-5d-CCI"/>
+                <constraint firstItem="f3V-ZL-HQk" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="bottom" constant="44" id="9qW-Rm-w6t"/>
+                <constraint firstItem="0Ph-dj-v7R" firstAttribute="bottom" secondItem="iN0-l3-epB" secondAttribute="bottom" constant="-20" id="BIJ-v9-DKU"/>
+                <constraint firstItem="f3V-ZL-HQk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Cqw-8f-lIl"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="centerX" secondItem="cuq-ue-Jyj" secondAttribute="centerX" id="EsN-cG-KcQ"/>
-                <constraint firstItem="1wK-Ol-7mm" firstAttribute="bottom" secondItem="HbT-GO-CPk" secondAttribute="top" constant="-4" id="F4T-j8-jQJ"/>
+                <constraint firstItem="1wK-Ol-7mm" firstAttribute="bottom" secondItem="HbT-GO-CPk" secondAttribute="top" constant="-10" id="F4T-j8-jQJ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="FUQ-Nh-ox9"/>
                 <constraint firstItem="WDx-aD-wJK" firstAttribute="centerX" secondItem="pLy-90-g1a" secondAttribute="centerX" id="MLY-Mh-BhE"/>
-                <constraint firstItem="HbT-GO-CPk" firstAttribute="bottom" secondItem="HcN-lo-9Jb" secondAttribute="top" constant="-16" id="OLY-LF-tHd"/>
+                <constraint firstItem="HbT-GO-CPk" firstAttribute="bottom" secondItem="HcN-lo-9Jb" secondAttribute="top" constant="-30" id="OLY-LF-tHd"/>
                 <constraint firstItem="H78-kl-y6L" firstAttribute="centerX" secondItem="EUD-XB-0CR" secondAttribute="centerX" id="Ofc-zy-NxN"/>
-                <constraint firstItem="EUD-XB-0CR" firstAttribute="top" secondItem="WDx-aD-wJK" secondAttribute="bottom" constant="10" id="Q3h-lx-rxt"/>
-                <constraint firstItem="HcN-lo-9Jb" firstAttribute="bottom" secondItem="CGh-ph-49t" secondAttribute="top" constant="-24" id="Qsk-IW-9CJ"/>
+                <constraint firstItem="EUD-XB-0CR" firstAttribute="top" secondItem="WDx-aD-wJK" secondAttribute="bottom" constant="20" id="Q3h-lx-rxt"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="Qup-3g-Gux"/>
                 <constraint firstItem="PbJ-Y8-MMf" firstAttribute="centerX" secondItem="C9Z-3u-ohd" secondAttribute="centerX" id="R1h-wb-tm1"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="RDw-W3-MpZ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="RgV-eT-vCl"/>
-                <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="36" id="STC-Oe-YVu"/>
-                <constraint firstItem="0CR-0R-0Nr" firstAttribute="top" secondItem="PbJ-Y8-MMf" secondAttribute="bottom" constant="10" id="Sah-YV-A2O"/>
+                <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="STC-Oe-YVu"/>
+                <constraint firstItem="0CR-0R-0Nr" firstAttribute="top" secondItem="PbJ-Y8-MMf" secondAttribute="bottom" constant="20" id="Sah-YV-A2O"/>
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VMo-hv-2qR"/>
-                <constraint firstItem="PbJ-Y8-MMf" firstAttribute="top" secondItem="C9Z-3u-ohd" secondAttribute="bottom" constant="10" id="Vo4-YP-n8O"/>
+                <constraint firstItem="PbJ-Y8-MMf" firstAttribute="top" secondItem="C9Z-3u-ohd" secondAttribute="bottom" constant="20" id="Vo4-YP-n8O"/>
                 <constraint firstItem="HcN-lo-9Jb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Wqo-IM-yCU"/>
                 <constraint firstItem="pLy-90-g1a" firstAttribute="top" secondItem="CGh-ph-49t" secondAttribute="top" id="XXL-dB-dNT"/>
-                <constraint firstItem="WDx-aD-wJK" firstAttribute="top" secondItem="pLy-90-g1a" secondAttribute="bottom" constant="10" id="a7m-oE-Ygy"/>
+                <constraint firstItem="WDx-aD-wJK" firstAttribute="top" secondItem="pLy-90-g1a" secondAttribute="bottom" constant="20" id="a7m-oE-Ygy"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="trailing" relation="lessThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="trailing" constant="16" id="bR1-VP-TdA"/>
                 <constraint firstItem="EUD-XB-0CR" firstAttribute="centerX" secondItem="WDx-aD-wJK" secondAttribute="centerX" id="bc8-gr-atX"/>
-                <constraint firstItem="CGh-ph-49t" firstAttribute="bottom" secondItem="C9Z-3u-ohd" secondAttribute="top" constant="-10" id="diZ-Kj-1hU"/>
+                <constraint firstItem="CGh-ph-49t" firstAttribute="bottom" secondItem="C9Z-3u-ohd" secondAttribute="top" constant="-20" id="diZ-Kj-1hU"/>
+                <constraint firstItem="CGh-ph-49t" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="bottom" constant="60" id="e2e-0y-DBK"/>
+                <constraint firstItem="f3V-ZL-HQk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="esm-ky-oED"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i6j-iI-02e"/>
                 <constraint firstItem="RA8-jd-dag" firstAttribute="centerX" secondItem="RR4-5o-pli" secondAttribute="centerX" id="inw-ZS-osP"/>
-                <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="20" id="luj-6S-dgY"/>
-                <constraint firstItem="RA8-jd-dag" firstAttribute="top" secondItem="RR4-5o-pli" secondAttribute="bottom" constant="10" id="mfW-ld-bDO"/>
+                <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="40" id="luj-6S-dgY"/>
+                <constraint firstItem="RA8-jd-dag" firstAttribute="top" secondItem="RR4-5o-pli" secondAttribute="bottom" constant="20" id="mfW-ld-bDO"/>
                 <constraint firstItem="H78-kl-y6L" firstAttribute="centerY" secondItem="0CR-0R-0Nr" secondAttribute="centerY" id="o0A-rK-1SQ"/>
+                <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="f3V-ZL-HQk" secondAttribute="trailing" constant="16" id="sAu-ql-xzb"/>
                 <constraint firstItem="etg-x7-Mx1" firstAttribute="centerY" secondItem="0CR-0R-0Nr" secondAttribute="centerY" id="uxL-V3-wEY"/>
                 <constraint firstItem="etg-x7-Mx1" firstAttribute="centerX" secondItem="RA8-jd-dag" secondAttribute="centerX" id="v5R-tE-Ub7"/>
-                <constraint firstItem="RR4-5o-pli" firstAttribute="top" secondItem="cuq-ue-Jyj" secondAttribute="bottom" constant="10" id="ymC-lk-DI6"/>
+                <constraint firstItem="RR4-5o-pli" firstAttribute="top" secondItem="cuq-ue-Jyj" secondAttribute="bottom" constant="20" id="ymC-lk-DI6"/>
             </constraints>
-            <point key="canvasLocation" x="189.85507246376812" y="484.82142857142856"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="9qW-Rm-w6t"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="369.56521739130437" y="434.51086956521743"/>
         </view>
     </objects>
     <designables>
         <designable name="0CR-0R-0Nr">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="80" height="80"/>
         </designable>
         <designable name="9Tg-dE-gH4">
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
         <designable name="C9Z-3u-ohd">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="80" height="80"/>
         </designable>
         <designable name="CGh-ph-49t">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="80" height="80"/>
         </designable>
         <designable name="EUD-XB-0CR">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="80" height="80"/>
         </designable>
         <designable name="Fhs-1e-Ysl">
             <size key="intrinsicContentSize" width="16" height="16"/>
@@ -504,28 +523,28 @@
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
         <designable name="PbJ-Y8-MMf">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="80" height="80"/>
         </designable>
         <designable name="RA8-jd-dag">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="80" height="80"/>
         </designable>
         <designable name="RR4-5o-pli">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="80" height="80"/>
         </designable>
         <designable name="WDx-aD-wJK">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="80" height="80"/>
         </designable>
         <designable name="YJW-U8-Yo7">
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
         <designable name="cuq-ue-Jyj">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="80" height="80"/>
         </designable>
         <designable name="jlt-C0-1Ot">
             <size key="intrinsicContentSize" width="16" height="16"/>
         </designable>
         <designable name="pLy-90-g1a">
-            <size key="intrinsicContentSize" width="60" height="60"/>
+            <size key="intrinsicContentSize" width="80" height="80"/>
         </designable>
         <designable name="w14-Kb-Jnf">
             <size key="intrinsicContentSize" width="16" height="16"/>
