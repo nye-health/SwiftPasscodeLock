@@ -431,7 +431,10 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ph-dj-v7R" userLabel="TouchID Button">
-                    <rect key="frame" x="159.5" y="850" width="95" height="26"/>
+                    <rect key="frame" x="159.5" y="832" width="95" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="Kz8-no-hKn"/>
+                    </constraints>
                     <inset key="contentEdgeInsets" minX="4" minY="4" maxX="4" maxY="4"/>
                     <state key="normal" title="Use TouchID">
                         <color key="titleColor" red="0.4549019608" green="0.59999999999999998" blue="0.89411764709999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -463,7 +466,7 @@
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="bottom" secondItem="HbT-GO-CPk" secondAttribute="top" constant="-10" id="F4T-j8-jQJ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="FUQ-Nh-ox9"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="centerY" secondItem="C9Z-3u-ohd" secondAttribute="centerY" id="J8o-Fg-mKp"/>
-                <constraint firstItem="0Ph-dj-v7R" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0CR-0R-0Nr" secondAttribute="bottom" constant="12" id="LrD-lR-N3s"/>
+                <constraint firstItem="0Ph-dj-v7R" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0CR-0R-0Nr" secondAttribute="bottom" constant="8" id="LrD-lR-N3s"/>
                 <constraint firstItem="WDx-aD-wJK" firstAttribute="centerX" secondItem="pLy-90-g1a" secondAttribute="centerX" id="MLY-Mh-BhE"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="bottom" secondItem="HcN-lo-9Jb" secondAttribute="top" constant="-20" id="OLY-LF-tHd"/>
                 <constraint firstItem="H78-kl-y6L" firstAttribute="centerX" secondItem="EUD-XB-0CR" secondAttribute="centerX" id="Ofc-zy-NxN"/>
@@ -487,7 +490,7 @@
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="i6j-iI-02e"/>
                 <constraint firstItem="RA8-jd-dag" firstAttribute="centerX" secondItem="RR4-5o-pli" secondAttribute="centerX" id="inw-ZS-osP"/>
                 <constraint firstItem="f3V-ZL-HQk" firstAttribute="top" secondItem="HcN-lo-9Jb" secondAttribute="bottom" constant="12" id="lMx-ej-Bqn"/>
-                <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" constant="40" id="luj-6S-dgY"/>
+                <constraint firstItem="C9Z-3u-ohd" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" priority="750" constant="40" id="luj-6S-dgY"/>
                 <constraint firstItem="WDx-aD-wJK" firstAttribute="centerY" secondItem="C9Z-3u-ohd" secondAttribute="centerY" id="naK-56-qUf"/>
                 <constraint firstItem="H78-kl-y6L" firstAttribute="centerY" secondItem="0CR-0R-0Nr" secondAttribute="centerY" id="o0A-rK-1SQ"/>
                 <constraint firstItem="pLy-90-g1a" firstAttribute="centerY" secondItem="CGh-ph-49t" secondAttribute="centerY" id="rmN-ES-ivF"/>
