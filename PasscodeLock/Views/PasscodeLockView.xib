@@ -466,7 +466,7 @@
                 <constraint firstItem="1wK-Ol-7mm" firstAttribute="bottom" secondItem="HbT-GO-CPk" secondAttribute="top" constant="-10" id="F4T-j8-jQJ"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="FUQ-Nh-ox9"/>
                 <constraint firstItem="RR4-5o-pli" firstAttribute="centerY" secondItem="C9Z-3u-ohd" secondAttribute="centerY" id="J8o-Fg-mKp"/>
-                <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="Jsj-Ux-qoB"/>
+                <constraint firstItem="1wK-Ol-7mm" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="Jsj-Ux-qoB"/>
                 <constraint firstItem="0Ph-dj-v7R" firstAttribute="top" relation="greaterThanOrEqual" secondItem="0CR-0R-0Nr" secondAttribute="bottom" constant="8" id="LrD-lR-N3s"/>
                 <constraint firstItem="WDx-aD-wJK" firstAttribute="centerX" secondItem="pLy-90-g1a" secondAttribute="centerX" id="MLY-Mh-BhE"/>
                 <constraint firstItem="HbT-GO-CPk" firstAttribute="bottom" secondItem="HcN-lo-9Jb" secondAttribute="top" constant="-20" id="OLY-LF-tHd"/>
